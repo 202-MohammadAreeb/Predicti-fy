@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Martel:wght@300;400;600&display=swap">
+    <title>YOGA SE HE HOGA</title>
+    <link rel="icon" type="image/svg" href="/assets/images/owner/logo-color.svg">
+
+    <meta name="description"
+        content="Somos um think-tank dedicado a promover o conhecimento sobre governanças privadas e ajudar os entusiastas a desenvolver e conectar seus projetos. Trabalhamos para criar jurisdições de cidades privadas no Brasil e apoiar os indivíduos e organizações em seus esforços para promover a governança privada.">
+
+    <link rel="stylesheet" type="text/css" href="../assets/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/define.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/footer.css">
+
+    <script src="/assets/scripts/importer.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+
+    <!-- B5-SCRIPTS DO BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../assets/styles/sobre.css">
+
+    <style>
+        .navbarcolor{
+            background: linear-gradient(to right, rgba(127, 124, 124, 0.541), rgba(72, 72, 72, 0.619), rgba(41, 40, 40, 0.737));
+            border-radius: 10px;
+        }
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background-color: aliceblue;
+        }
+
+        .fundo {
+            background-image: url(../images/cp/fundo.png);
+            background-position: center;
+            background-repeat: repeat-y;
+            background-size: cover;
+            margin-top: 0px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: black;
+        
+        }
+
+        .banner {
+            text-align: center;
+        }
+
+        .titulo-banner {
+            /*font-family: 'Martel';
+    font-size: calc(15px + 2.5vw);*/
+            margin-top: calc(15px + 5vw);
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .linha-banner {
+            height: 2px;
+            width: 15vw;
+            background: #ffc700;
+            margin: auto;
+
+        }
+
+        .texto-banner {
+            font-family: 'Martel';
+            font-size: calc(10px + 1.3vw);
+            margin-top: calc(5px + 1vw);
+            margin-left: calc(5px + 10vw);
+            margin-right: calc(5px + 10vw);
+            text-align: center;
+        }
+
+        .botao-participe {
+            /*grid-area: botao;*/
+            font-family: 'Martel';
+            background-color: #ffc700;
+            border: none;
+            color: #292929;
+            padding: calc(5px + 0.5vw) calc(20px + 0.5vw);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: calc(14px + 0.6vw);
+            cursor: pointer;
+            max-width: calc(200px + 20vw);
+
+            margin-top: calc(5px + 2vw);
+            margin-bottom: calc(15px + 8vw);
+        }
+
+        .imagem1 {
+            position: relative;
+            object-fit: cover;
+            height: calc(100px + 20vw);
+            width: 100%;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .titulos {
+            font-family: 'Martel';
+            font-size: calc(5px + 2vw);
+            align-items: center;
+            text-align: center;
+        }
+
+        /* PARTE DOS ÍCONES */
+
+
+
+        .circulo {
+            width: 100px;
+            height: 100px;
+            background-color: #ffc700;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            align-items: center;
+        }
+
+
+
+        /*
+.circulo-icone {
+    height: 100px;
+    width: 100px;
+    background-color: #ffc700;
+    border-radius: 50%;
+    display: inline-block;
+    align-items: center;
+}
+*/
+
+        .titulo-icone {
+            font-family: 'Martel';
+            font-size: calc(15px + 0.5vw);
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .texto-icone {
+            font-family: 'Martel';
+            font-size: calc(10px + 0.5vw);
+            color: white;
+            align-items: center;
+            text-align: center;
+        }
+
+
+
+        /* CARDS DE VALORES COM BOOTSTRAP */
+
+        .titulo-cards {
+            font-family: 'Martel';
+            font-size: calc(5px + 2vw);
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .linha-titulo-cards {
+            height: 2px;
+            width: 55vw;
+            background: #ffc700;
+            margin: 0 auto;
+        }
+
+        .row.g-0 {
+            display: flex;
+            align-items: center;
+            /*margin-top: -80px;*/
+        }
+
+        .img-fluid.rounded-start {
+            height: calc(120px + 10vw);
+            width: 90vw;
+            width: auto;
+            object-fit: cover;
+        }
+
+        .img-esq {
+            border-radius: 0px 30px 30px 0px;
+        }
+
+        .img-dir {
+            border-radius: 30px 0px 0px 30px;
+        }
+
+        .card-title {
+            font-family: 'Martel';
+            font-size: 22px;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+
+            /*margin-top: 60px;*/
+        }
+
+        .card-title-right {
+            font-family: 'Martel';
+            font-size: 22px;
+            padding: 20px;
+            text-align: right;
+            font-weight: 600;
+
+            /*margin-top: 60px;*/
+        }
+
+        .card-text {
+            font-family: 'Martel';
+            font-size: 14px;
+            padding-left: 20px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        .card-text-right {
+            font-family: 'Martel';
+            font-size: 14px;
+            padding-left: 30px;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        /* FIM DE CARDS DE VALORES COM BOOTSTRAP */
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-body-tertiary navbarcolor">
+
+        <a class="navbar-brand" href="{%url 'index' %}">Home</a>
+  
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- This is the actual code that creates the "hamburger icon" -->
+        <!-- The data-target grabs ids to put into the icon -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+  
+        <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="navbar-nav">
+  
+            <!-- the span class "sr-only" tells screen readers that Home is the active link, for accessibility -->
+            <a class="nav-item nav-link active" href="{%url 'home'%}">Diabetes <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'home_two' %}">Heart</a>
+            <a class="nav-item nav-link" href="{% url 'lungs' %}">Lungs</a>
+            <a class="nav-item nav-link" href="{% url 'Kidney' %}">Kidney</a>
+            <a class="nav-item nav-link" href="{%url 'bmi_calculator' %}">BMI</a>
+            {% csrf_token %}
+            
+            
+  
+            <!-- DROPDOWN MENU -->
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
+                <a class="dropdown-item" href="{% url 'feedbackForm' %}">Feedback</a>
+                {% csrf_token %}
+                <a class="dropdown-item" href="{% url 'rating' %}">Rating</a>
+                
+  
+                <!-- Use this to separate a new link: -->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'remediesD' %}">Remedies For Diabetes</a>
+                <a class="dropdown-item" href="{% url 'remediesH' %}">Remedies For Heart Problems</a>
+              </div>
+            </div>
+  
+            
+  
+          </div> <!-- /.navbar-nav, left-hand content -->
+  
+          <!-- STUFF ON THE RIGHT -->
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="{%url 'about' %}">About</a>
+          </div> <!-- /.navbar-nav, right-hand content -->
+  
+        </div> <!-- /.navbar-collapse -->
+      </nav>
+      
+
+    <!-- BANNER -->
+    <section class="fundo">
+
+
+        <main>
+
+
+            <!-- VALORES: B5-CARD (CARDS DE BOOTSTRAP) -->
+            <h2 class="titulo-cards  "><b>10 Yoga Exercises for a Healthy Body</b></h2>
+            <div class="linha-titulo-cards"></div>
+
+            <br><br>
+            <section class="card bg-transparent border-0 text-white mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtYPqJXA14BpRu4pzMWHopH52bf72siZlkKO3XKWlvC0xaJDawJ1aCoZAM0STRKD6nAPw&usqp=CAU"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-esq"
+                            alt="cid-1">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">1. Tadasana (Mountain pose)</h3>
+                            <p class="card-text">The mountain pose helps strengthen the vertebral column and the heart.
+                                The deep breathing involved also expands the lungs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bg-transparent border-0 mb-3">
+
+                <div class="row g-0">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="card-body">
+                            <h3 class="card-title-right">2. Vrikshasana (Tree pose)</h3>
+                            <p class="card-text-right">Recursos materiais têm o poder de facilitar e melhorar a
+                                qualidade de vida de cada indivíduo. Por isso, na busca individual da felicidade, entra
+                                a valorização da prosperidade. Como tal busca é individual, todos devem ter liberdade de
+                                realizar trocas e gerar prosperidade de um jeito que faça sentido para sua própria vida.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRe4f69QJGxcF_-rGjUxy3LAO5Yu_oEN-3Xg&usqp=CAU"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-dir"
+                            alt="cid-2">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="card bg-transparent border-0 text-white mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="data:image/jpeg;base64,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"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-esq"
+                            alt="cid-3">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">3. Utthita Hastapadasana (Extended hands and feet pose)</h3>
+                            <p class="card-text">This yoga posture requires focus and strength to balance. It helps to
+                                control weight, thus boosting the health of your heart.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bg-transparent border-0 mb-3">
+
+                <div class="row g-0">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="card-body">
+                            <h3 class="card-title-right">4. Trikonasana (Triangle pose)</h3>
+                            <p class="card-text-right">Trikonasana is a heart opening, standing yoga posture designed to
+                                promote cardiovascular exercise. The chest expands as breathing becomes deep and
+                                rhythmical. It also increases stamina.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzOiMzUxAo-koO41vEDrDbMJicln6_kWU2VuNf6Vji8KztscQ_LIn2-Tnhe6OjzQgaX0&usqp=CAU"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-dir"
+                            alt="cid-2">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="card bg-transparent border-0 text-white mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://media.istockphoto.com/id/1408272222/vector/woman-doing-warrior-ii-pose-virabhadrasana-ii-exercise-flat-vector-illustration-isolated-on.jpg?s=612x612&w=0&k=20&c=6AmyjBgNWu6v4L3R89NabqiW8ENNJGjlXcAvUR_jcH4="
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-esq"
+                            alt="cid-3">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">5. Veerabhadrasana (Warrior pose) </h3>
+                            <p class="card-text">The warrior pose improves balance in the body and increases stamina. It
+                                also improves blood circulation and releases stress. It keeps the heart rate in check.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bg-transparent border-0 mb-3">
+
+                <div class="row g-0">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="card-body">
+                            <h3 class="card-title-right">6. Utkatasana (Chair pose)</h3>
+                            <p class="card-text-right">In the Utkatasana yoga posture, you can feel the heart and
+                                respiration rate increase. This posture stretches the chest and stimulates the heart.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="data:image/jpeg;base64,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"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-dir"
+                            alt="cid-2">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="card bg-transparent border-0 text-white mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpHsZ4g_8u7X-4v8T577jVGxkfXsFqtcABkw&usqp=CAU"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-esq"
+                            alt="cid-3">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">7. Marjariasana (Cat pose)</h3>
+                            <p class="card-text">This yoga posture is a welcome relief after the chair pose. It allows
+                                the heart rate to settle and become soft and rhythmic. It also boosts blood circulation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bg-transparent border-0 mb-3">
+
+                <div class="row g-0">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="card-body">
+                            <h3 class="card-title-right">8. Bhujangasana (Cobra pose)</h3>
+                            <p class="card-text-right">Bhujangasana stretches the chest and invigorates the heart.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="data:image/png;base64,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"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-dir"
+                            alt="cid-2">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="card bg-transparent border-0 text-white mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="data:image/png;base64,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"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-esq"
+                            alt="cid-3">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">9. Paschimottanasana (Two legged forward bend pose)</h3>
+                            <p class="card-text">The Paschimottanasana posture brings the head lower than the heart.
+                                This helps in reducing the heart rate and respiration while allowing the entire system
+                                to relax.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bg-transparent border-0 mb-3">
+
+                <div class="row g-0">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="card-body">
+                            <h3 class="card-title-right">10. Shavasana (Corpse pose)</h3>
+                            <p class="card-text-right">Deep rest is the counter pose for all yoga postures. It allows
+                                the body and the breath to relax. It is a wonderful stress buster. It improves the
+                                overall health of the heart and body.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ17ctw1fKvYyP7GfbMIlhqtovEj9-T7Ev9VA&usqp=CAU"
+                            class="img-fluid rounded-start img-esq" alt="cid-1" class="img-fluid rounded-start img-dir"
+                            alt="cid-2">
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+
+
+            <!-- CTA FINAL -->
+            <br><br>
+
+
+    </section> <!-- section do fundo -->
+
+    </main>
+
+    </div>
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

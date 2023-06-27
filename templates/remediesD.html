@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'rel='nofollow' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+<title>Remedies</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: black;
+        }
+        .navbarcolor{
+            background: linear-gradient(to right, rgba(127, 124, 124, 0.541), rgba(72, 72, 72, 0.619), rgba(41, 40, 40, 0.737));
+            border-radius: 10px;
+        }
+
+        .button {
+background-color: rgb(131, 131, 131);
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 18px;
+margin: 10px 67px;
+cursor: pointer;
+}
+
+      #container{
+        text-align: center;
+        color:white;
+      }
+      /* .centerImage
+{
+ text-align:center;
+ display:block;
+} */
+
+
+.glow-on-hover {
+  margin-left: 187px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: grey;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.c{
+  color:white;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-body-tertiary navbarcolor">
+
+        <a class="navbar-brand" href="{%url 'index' %}">Home</a>
+  
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- This is the actual code that creates the "hamburger icon" -->
+        <!-- The data-target grabs ids to put into the icon -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+  
+        <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="navbar-nav">
+  
+            <!-- the span class "sr-only" tells screen readers that Home is the active link, for accessibility -->
+            <a class="nav-item nav-link active" href="{%url 'home'%}">Diabetes <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'home_two' %}">Heart</a>
+            <a class="nav-item nav-link" href="{% url 'lungs' %}">Lungs</a>
+            <a class="nav-item nav-link" href="{% url 'Kidney' %}">Kidney</a>
+            {% csrf_token %}
+            
+            
+  
+            <!-- DROPDOWN MENU -->
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
+                <a class="dropdown-item" href="{% url 'feedbackForm' %}">Feedback</a>
+                {% csrf_token %}
+                <a class="dropdown-item" href="{% url 'rating' %}">Rating</a>
+                
+  
+                <!-- Use this to separate a new link: -->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'remediesD' %}">Remedies For Diabetes</a>
+                <a class="dropdown-item" href="{% url 'remediesH' %}">Remedies For Heart Problems</a>
+              </div>
+            </div>
+  
+            
+  
+          </div> <!-- /.navbar-nav, left-hand content -->
+  
+          <!-- STUFF ON THE RIGHT -->
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="{%url 'about' %}">About</a>
+          </div> <!-- /.navbar-nav, right-hand content -->
+  
+        </div> <!-- /.navbar-collapse -->
+      </nav>
+      <br>
+      <div id="container">
+
+        <!-- <img src="https://images.myupchar.com/2727/webp/dil-ki-bimari-ke-gharelu-upay.webp" class="centerImage" alt="CH Logo" height="350" width="400" > -->
+          <img src="https://qph.cf2.quoracdn.net/main-qimg-a204c3b034b7f770323a0bba74c15eea" class="centerImage" alt="CH Logo" height="350" width="400">
+        
+       <br>
+      <a href="{% url 'yoga' %}">
+        <button class=" glow-on-hover button" type="button">Yoga</button>
+      
+      </a>
+      <a href="{% url 'diet' %}">
+      <button class=" glow-on-hover button" type="button">Diet</button>
+      
+      </a>
+      
+      
+      </div>
+      
+      
+      <br>
+
+<div class="container c">
+<h1>7 Easy Ways to Lower Blood Sugar Levels Naturally</h1>
+<p class="text-justify">Knowing how to reduce your blood sugar levels naturally is key to managing prediabetes or diabetes. Consider actions such as exercising regularly, eating more fiber, incorporating more snacks, and increasing your probiotic intake.
+
+    High blood sugar, also known as hyperglycemia, is associated with diabetes and prediabetes. Prediabetes is when your blood sugar is high, but not high enough to be classified as diabetes.
+    
+    Your body usually manages your blood sugar levels by producing insulin, a hormone that allows your cells to use the circulating sugar in your blood. As such, insulin is the most important regulator of blood sugar levels (1Trusted Source).
+    
+    However, multiple factors can impair blood sugar management and lead to hyperglycemia.
+    
+    Internal causes for high blood sugar include when your liver produces too much glucose, your body makes too little insulin, or your body can’t effectively use insulin. The latter is known as insulin resistance (1Trusted Source).
+    
+    External factors include dietary choices, certain medications, a sedentary lifestyle, and stress (1Trusted Source, 2Trusted Source).
+    
+    The Centers for Disease Control and Prevention (CDC) reports that 13% of U.S. adults live with diabetes and that another 34.5% have prediabetes. This means that close to 50% of all U.S. adults have diabetes or prediabetes (3Trusted Source).
+    
+    Blood sugar management is especially important for people with diabetes, as chronically high blood sugar levels can lead to limb and life threatening complications (1Trusted Source).
+    
+    Here are 14 easy and evidence-backed ways to naturally lower your blood sugar levels.</p>
+
+    <h1> Exercise regularly</h1>
+
+<p class="text-justify">Regular exercise can help you reach and maintain a moderate weight and increase insulin sensitivity (4Trusted Source).</p>
+<p class="text-justify">Increased insulin sensitivity means your cells can more effectively use the available sugar in your bloodstream.</p>
+<p class="text-justify">If you have problems with blood sugar management, consider routinely checking your levels before and after exercising. This will help you learn how you respond to different activities and keep your blood sugar levels from getting too high or low (5).</p>
+<p class="text-justify">What’s more, researchers recommend doing so-called “exercise snacks” to lower blood sugar and prevent the damage that sitting all day can do (6Trusted Source).</p>
+<p class="text-justify">Exercise snacks simply mean that you break up your sitting time every 30 minutes for just a few minutes throughout the day. Some of the recommended exercises include light walking or simple resistance exercises like squats or leg raises.</p>
+<p class="text-justify">Other useful forms of exercise include weightlifting, brisk walking, running, biking, dancing, hiking, swimming, and more. In fact, any activity that regularly gets you up and moving — regardless of the intensity — beats a sedentary lifestyle.</p>
+<p class="text-justify">Plus, know that if you have trouble dedicating longer periods to exercise throughout the week, you can still gain many benefits by doing shorter sessions. For example, try aiming for 10-minute exercise sessions 3 times a day for 5 days, with the goal of 150 minutes per week.</p>
+
+
+
+
+
+
+
+
+</div>
+
+
+<script src=”https://code.jquery.com/jquery-3.2.1.slim.min.js” integrity=”sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN” crossorigin=”anonymous”></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

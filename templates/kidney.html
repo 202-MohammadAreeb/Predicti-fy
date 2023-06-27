@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Kidney</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    <style>
+        .borderr {
+            background: linear-gradient(to right, rgba(127, 124, 124, 0.757), rgb(72, 72, 72), rgb(41, 40, 40));
+            border-radius: 20px;
+            text-align: left;
+            padding: 10rem 1rem -1rem 3rem;
+            width: 40%;
+            align-items: flex-end;
+            margin: 0px 0px 0px auto;
+            color:white;
+            
+            
+
+        }
+        .c{
+          color:white;
+        }
+        .navbarcolor{
+            background: linear-gradient(to right, rgba(127, 124, 124, 0.541), rgba(72, 72, 72, 0.619), rgba(41, 40, 40, 0.737));
+            border-radius: 10px;
+        }
+        body {
+            background-image: url('https://www.niddk.nih.gov/media-assets/17775/N00730-H_thumbnail.jpg');
+            background-position: left;
+            background-size: 700px;
+            background-repeat: no-repeat;
+            background-position-y: 150px;
+            background-position-x: 30px;
+            background-color: black;
+            
+          }
+          .effect {
+            animation: move-container 1s linear;
+          }
+          
+          @keyframes move-container {
+            from {
+              transform: translateX(100%);
+            }
+            to {
+              transform: translateX(0%);
+            }
+          }
+
+        
+      
+    </style>
+</head>
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-body-tertiary navbarcolor">
+
+    <a class="navbar-brand" href="{%url 'index' %}">Home</a>
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- This is the actual code that creates the "hamburger icon" -->
+    <!-- The data-target grabs ids to put into the icon -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="navbar-nav">
+
+        <!-- the span class "sr-only" tells screen readers that Home is the active link, for accessibility -->
+        <a class="nav-item nav-link active" href="{%url 'home'%}">Diabetes <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'home_two' %}">Heart</a>
+        <a class="nav-item nav-link" href="{% url 'lungs' %}">Lungs</a>
+        <a class="nav-item nav-link" href="{% url 'Kidney' %}">Kidney</a>
+        <a class="nav-item nav-link" href="{%url 'bmi_calculator' %}">BMI</a>
+        {% csrf_token %}
+        
+        
+
+        <!-- DROPDOWN MENU -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
+            <a class="dropdown-item" href="{% url 'feedbackForm' %}">Feedback</a>
+            {% csrf_token %}
+            <a class="dropdown-item" href="{% url 'rating' %}">Rating</a>
+            
+
+            <!-- Use this to separate a new link: -->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'remediesD' %}">Remedies For Diabetes</a>
+            <a class="dropdown-item" href="{% url 'remediesH' %}">Remedies For Heart Problems</a>
+          </div>
+        </div>
+
+        
+
+      </div> <!-- /.navbar-nav, left-hand content -->
+
+      <!-- STUFF ON THE RIGHT -->
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="{%url 'about' %}">About</a>
+      </div> <!-- /.navbar-nav, right-hand content -->
+
+    </div> <!-- /.navbar-collapse -->
+  </nav>
+  <br>
+
+
+
+
+
+    
+       <form action="{% url 'resultKidney' %}">
+        {% csrf_token %}
+        <div class='container borderr effect'>
+            
+            <form class="form-group ">
+
+
+                <br>
+                <label for="Age">Age:</label><input type="text" class="form-control" required  name="Age" size="20">
+
+                <label for="Blood Pressure">Blood Pressure:</label><input type="text" class="form-control" required name="Blood Pressure" size="20">
+
+                <label for="Specific Gravity">Specific Gravity:</label><input type="text" class="form-control" required name="Specific Gravity" size="20">
+
+                <label for="Albumin">Albumin:</label><input type="text" class="form-control" required name="Albumin" size="20">
+
+                <label for="Sugar">Sugar:</label><input type="text" class="form-control" required name="Sugar" size="20">
+
+                <label for="Red Blood Cells">Red Blood Cells(Normal=1,Abnormal=0):</label><input type="text" class="form-control" required name="Red Blood Cells" size="20">
+
+                <label for="Pus Cell">Pus Cell(Present=1,Not Present=0):</label><input type="text" class="form-control" required name="Pus Cell" size="20">
+                
+
+                <label for="Pus Cell Clumps">Pus Cell Clumps(Present=1,Not Present=0):</label><input type="text" class="form-control" required name="Pus Cell Clumps" size="20">
+
+                <label for="Bacteria">Bacteria(Present=1,Not Present=0):</label><input type="text" class="form-control" required name="Bacteria" size="20">
+
+                <label for="Blood Glucose Random">Blood Glucose Random:</label><input type="text" class="form-control" required name="Blood Glucose Random" size="20">
+
+                <label for="Blood Urea">Blood Urea:</label><input type="text" class="form-control" required name="Blood Urea" size="20">
+
+                <label for="Serum Creatinine">Serum Creatinine:</label><input type="text" class="form-control" required name="Serum Creatinine" size="20">
+
+                <label for="Sodium">Sodium:</label><input type="text" class="form-control" required name="Sodium" size="20">
+                
+                <label for="Potassium">Potassium:</label><input type="text" class="form-control" required name="Potassium" size="20">
+
+                <label for="Hemoglobin">Hemoglobin:</label><input type="text" class="form-control" required name="Hemoglobin" size="20">
+
+                <label for="Packed Cell Volume">Packed Cell Volume:</label><input type="text" class="form-control" required name="Packed Cell Volume" size="20">
+                
+                <label for="White Blood Cell Count">White Blood Cell Count:</label><input type="text" class="form-control" required name="White Blood Cell Count" size="20">
+
+                <label for="Red Blood Cell Count">Red Blood Cell Count:</label><input type="text" class="form-control" required name="Red Blood Cell Count" size="20">
+
+                <label for="Hypertension">Hypertension(Yes-1,No-0):</label><input type="text" class="form-control" required name="Hypertension" size="20">
+                
+                <label for="Diabetes Mellitus">Diabetes Mellitus(Yes-1,No-0):</label><input type="text" class="form-control" required name="Diabetes Mellitus" size="20">
+
+                <label for="Coronary Artery Disease">Coronary Artery Disease(Yes-1,No-0):</label><input type="text" class="form-control" required name="Coronary Artery Disease" size="20">
+
+                <label for="Appetite">Appetite(Good-1,Poor-0):</label><input type="text" class="form-control" required name="Appetite" size="20">
+                
+                <label for="Pedal Edema">Pedal Edema(Yes-1,No-0):</label><input type="text" class="form-control" required name="Pedal Edema" size="20">
+
+                <label for="Anemia">Anemia(Yes-1,No-0):</label><input type="text" class="form-control" required name="Anemia" size="20">
+
+                
+                <br>
+                <input type="submit" class="form-control" name="" value="submit">
+                <br>
+            </form>
+        </div>
+
+        <figure class="text-center c">
+            <blockquote class="blockquote">
+              <p>An early diagnosis of Kidney conditions can save a life</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Mohammad Areeb 
+            </figcaption>
+          </figure>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
